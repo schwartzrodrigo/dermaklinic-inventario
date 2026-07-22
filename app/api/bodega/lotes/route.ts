@@ -17,7 +17,7 @@ export async function GET() {
 
     const ahora = new Date();
 
-    const lotesProcesados = lotes.map((lote) => {
+    const lotesProcesados = lotes.map((lote: any) => {
       let estadoVencimiento = 'VIGENTE';
       let diasParaVencer: number | null = null;
 

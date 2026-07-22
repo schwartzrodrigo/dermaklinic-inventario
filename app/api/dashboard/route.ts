@@ -11,7 +11,7 @@ export async function GET() {
 
     let totalStockUnidades = 0;
     let valorizacionTotal = 0;
-    productos.forEach((p) => {
+    productos.forEach((p: any) => {
       totalStockUnidades += p.stockActual;
       valorizacionTotal += p.stockActual * p.precioActual;
     });
@@ -59,7 +59,7 @@ export async function GET() {
 
     // Productos con stock bajo mínimo
     const productosStockBajo = productos.filter(
-      (p) => p.stockActual <= p.stockMinimo
+      (p: any) => p.stockActual <= p.stockMinimo
     );
 
     return NextResponse.json({
