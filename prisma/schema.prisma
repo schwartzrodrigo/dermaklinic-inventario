@@ -1,0 +1,147 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Usuario {
+  id               String                 @id @default(uuid())
+  nombre           String
+  email            String                 @unique
+  password         String
+  rol              String                 @default("PERSONAL_CLINICO") // ADMINISTRADOR, BODEGA, PERSONAL_CLINICO
+  cargo            String?
+  avatarColor      String                 @default("#0ea5e9")
+  createdAt        DateTime               @default(now())
+
+  documentosCompra DocumentoCompra[]
+  movimientos      MovimientoInventario[]
+}
+
+model Producto {
+  id               String                 @id @default(uuid())
+  sku              String                 @unique
+  nombre           String
+  marca            String?
+  categoria        String                 // INSUMO_MEDICO, INSUMO_ESTETICO, INSUMO_ESCRITORIO, INSUMO_ASEO
+  grupo            String                 // ESTERIL, NO_ESTERIL
+  unidad           String                 // CAJA, FRANJA, AMPOLLA, UNIDAD, PAQUETE, BOTELLA
+  stockMinimo      Int                    @default(5)
+  stockActual      Int                    @default(0)
+  precioActual     Float                  @default(0.0)
+  createdAt        DateTime               @default(now())
+  updatedAt        DateTime               @updatedAt
+
+  lotes            LoteProducto[]
+  movimientos      MovimientoInventario[]
+  detallesAuditoria DetalleAuditoria[]
+  alertasPrecio    AlertaPrecio[]
+}
+
+model Proveedor {
+  id               String                 @id @default(uuid())
+  rut              String?                @unique
+  nombre           String
+  contacto         String?
+  telefono         String?
+  email            String?
+  direccion        String?
+  createdAt        DateTime               @default(now())
+
+  documentos       DocumentoCompra[]
+  alertasPrecio    AlertaPrecio[]
+}
+
+model DocumentoCompra {
+  id               String                 @id @default(uuid())
+  tipo             String                 // FACTURA, GUIA_DESPACHO
+  numeroDoc        String
+  proveedorId      String
+  usuarioId        String?
+  usuarioNombre    String?                @default("Recepción Bodega")
+  fechaEmision     DateTime
+  fechaRecepcion   DateTime               @default(now())
+  observaciones    String?
+  totalDoc         Float                  @default(0.0)
+  createdAt        DateTime               @default(now())
+
+  proveedor        Proveedor              @relation(fields: [proveedorId], references: [id])
+  usuario          Usuario?               @relation(fields: [usuarioId], references: [id])
+  lotes            LoteProducto[]
+}
+
+model LoteProducto {
+  id                 String               @id @default(uuid())
+  productoId         String
+  documentoCompraId  String?
+  numeroLote         String
+  fechaVencimiento   DateTime?
+  cantidadInicial    Int
+  cantidadDisponible Int
+  costoUnitario      Float
+  fechaIngreso       DateTime             @default(now())
+
+  producto           Producto             @relation(fields: [productoId], references: [id], onDelete: Cascade)
+  documentoCompra    DocumentoCompra?     @relation(fields: [documentoCompraId], references: [id])
+  movimientos        MovimientoInventario[]
+}
+
+model MovimientoInventario {
+  id               String                 @id @default(uuid())
+  productoId       String
+  loteId           String?
+  usuarioId        String?
+  tipoMovimiento   String                 // INGRESO, EGRESO, AJUSTE_AUDITORIA
+  motivo           String                 // COMPRA, USO_CLINICO, CONSUMO_INTERNO, MERMA, VENCIMIENTO, AJUSTE_POSITIVO, AJUSTE_NEGATIVO
+  cantidad         Int
+  costoUnitario    Float?
+  fechaHora        DateTime               @default(now())
+  usuario          String                 @default("Personal DermaKlinic")
+  notas            String?
+
+  producto         Producto               @relation(fields: [productoId], references: [id], onDelete: Cascade)
+  lote             LoteProducto?          @relation(fields: [loteId], references: [id])
+  usuarioRel       Usuario?               @relation(fields: [usuarioId], references: [id])
+}
+
+model AuditoriaMensual {
+  id               String                 @id @default(uuid())
+  fecha            DateTime               @default(now())
+  mesAno           String                 // e.g. "2026-07"
+  estado           String                 @default("BORRADOR") // BORRADOR, FINALIZADA
+  observaciones    String?
+  auditorNombre    String?                @default("Administración DermaKlinic")
+  createdAt        DateTime               @default(now())
+  updatedAt        DateTime               @updatedAt
+
+  detalles         DetalleAuditoria[]
+}
+
+model DetalleAuditoria {
+  id               String                 @id @default(uuid())
+  auditoriaId      String
+  productoId       String
+  stockSistema     Int
+  stockFisico      Int
+  diferencia       Int
+  valorDiferencia  Float
+  justificacion    String?
+
+  auditoria        AuditoriaMensual       @relation(fields: [auditoriaId], references: [id], onDelete: Cascade)
+  producto         Producto               @relation(fields: [productoId], references: [id], onDelete: Cascade)
+}
+
+model AlertaPrecio {
+  id               String                 @id @default(uuid())
+  productoId       String
+  proveedorId      String
+  precioAnterior   Float
+  precioNuevo      Float
+  porcentajeVariacion Float
+  fechaDetectada   DateTime               @default(now())
+
+  producto         Producto               @relation(fields: [productoId], references: [id], onDelete: Cascade)
+  proveedor        Proveedor              @relation(fields: [proveedorId], references: [id], onDelete: Cascade)
+}
