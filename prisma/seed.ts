@@ -41,7 +41,7 @@ async function main() {
   const uRodrigo = await prisma.usuario.create({
     data: {
       nombre: 'Rodrigo Schwartz',
-      email: 'rodrigo.schwartz@dermaklinic.cl',
+      email: 'schwartz.rodrigo@gmail.com',
       password: passAdmin,
       rol: 'ADMINISTRADOR',
       cargo: 'Administrador General (Acceso Total)',
