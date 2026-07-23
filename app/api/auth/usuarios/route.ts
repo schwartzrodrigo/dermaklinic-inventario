@@ -16,8 +16,8 @@ export async function GET() {
     });
 
     return NextResponse.json({ success: true, usuarios });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error al obtener usuarios:', error);
-    return NextResponse.json({ success: false, error: 'Error al consultar usuarios' }, { status: 500 });
+    return NextResponse.json({ success: false, error: 'Error al consultar usuarios', details: error?.message || String(error) }, { status: 500 });
   }
 }
