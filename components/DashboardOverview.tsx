@@ -28,6 +28,9 @@ import {
 
 interface DashboardOverviewProps {
   data: any;
+  loading?: boolean;
+  error?: string | null;
+  onRetry?: () => void;
   setActiveTab: (tab: string) => void;
   onOpenNuevoEgreso: () => void;
   onOpenNuevaRecepcion: () => void;
@@ -35,14 +38,43 @@ interface DashboardOverviewProps {
 
 export default function DashboardOverview({
   data,
+  loading,
+  error,
+  onRetry,
   setActiveTab,
   onOpenNuevoEgreso,
   onOpenNuevaRecepcion,
 }: DashboardOverviewProps) {
-  if (!data || !data.summary) {
+  if (loading) {
     return (
-      <div className="flex justify-center items-center h-64">
+      <div className="flex flex-col justify-center items-center h-64 space-y-4">
         <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-teal-500"></div>
+        <p className="text-slate-400 text-sm">Cargando datos del inventario...</p>
+      </div>
+    );
+  }
+
+  if (error || !data || !data.summary) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[45vh] p-8 bg-slate-900/80 border border-slate-800 rounded-3xl text-center space-y-4 max-w-xl mx-auto my-8">
+        <div className="p-4 bg-rose-500/10 text-rose-400 rounded-full border border-rose-500/20">
+          <AlertCircle className="w-10 h-10" />
+        </div>
+        <h2 className="text-xl font-bold text-slate-100">No se pudo cargar el Dashboard</h2>
+        <p className="text-slate-400 text-sm leading-relaxed">
+          {error || 'Error al conectar con la base de datos Supabase.'}
+        </p>
+        <div className="p-4 bg-slate-950/80 border border-slate-800 rounded-xl text-left text-xs text-slate-400 font-mono w-full">
+          💡 <span className="text-amber-300 font-semibold">Causa:</span> La base de datos Supabase (<code className="text-teal-400">db.ohevfnfthwmchbzsglwg.supabase.co</code>) no responde (proyecto pausado o string de conexión).
+        </div>
+        {onRetry && (
+          <button
+            onClick={onRetry}
+            className="px-6 py-2.5 bg-teal-600 hover:bg-teal-500 text-white text-sm font-semibold rounded-xl transition-all shadow-lg shadow-teal-900/40 mt-2"
+          >
+            Reintentar Conexión
+          </button>
+        )}
       </div>
     );
   }

@@ -17,6 +17,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [dashboardData, setDashboardData] = useState<any>(null);
   const [loadingDashboard, setLoadingDashboard] = useState(true);
+  const [dashboardError, setDashboardError] = useState<string | null>(null);
 
   // Active User State
   const [currentUser, setCurrentUser] = useState<UserSession | null>(null);
@@ -80,14 +81,18 @@ export default function Home() {
 
   const fetchDashboard = async () => {
     setLoadingDashboard(true);
+    setDashboardError(null);
     try {
       const res = await fetch('/api/dashboard');
       const data = await res.json();
       if (data.success) {
         setDashboardData(data);
+      } else {
+        setDashboardError(data.error || 'Error al obtener información de la base de datos');
       }
     } catch (err) {
       console.error('Error al obtener datos del dashboard:', err);
+      setDashboardError('Error de red o conexión con el servidor');
     } finally {
       setLoadingDashboard(false);
     }
@@ -146,6 +151,9 @@ export default function Home() {
         {!esRestringido && activeTab === 'dashboard' && (
           <DashboardOverview
             data={dashboardData}
+            loading={loadingDashboard}
+            error={dashboardError}
+            onRetry={fetchDashboard}
             setActiveTab={handleTabChange}
             onOpenNuevoEgreso={handleOpenNuevoEgreso}
             onOpenNuevaRecepcion={handleOpenNuevaRecepcion}
