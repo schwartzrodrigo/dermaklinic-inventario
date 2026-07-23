@@ -9,7 +9,10 @@ function createPrismaClient() {
 
   const pool = new Pool({
     connectionString: connectionString || 'postgresql://postgres:postgres@localhost:5432/postgres',
-    connectionTimeoutMillis: 5000,
+    connectionTimeoutMillis: 10000,
+    ssl: connectionString.includes('supabase.co') || connectionString.includes('pooler.supabase')
+      ? { rejectUnauthorized: false }
+      : false,
   });
 
   const adapter = new PrismaPg(pool);
