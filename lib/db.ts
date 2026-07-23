@@ -9,14 +9,12 @@ const globalForPrisma = global as unknown as { prisma: PrismaClient };
 function createPrismaClient() {
   const dbUrl = process.env.DATABASE_URL || '';
 
-  if (dbUrl.startsWith('postgres://') || dbUrl.startsWith('postgresql://')) {
-    const pool = new Pool({ connectionString: dbUrl });
-    const adapter = new PrismaPg(pool);
-    return new PrismaClient({ adapter });
-  }
+  const connectionString = (dbUrl.startsWith('postgres://') || dbUrl.startsWith('postgresql://'))
+    ? dbUrl
+    : 'postgresql://postgres:postgres@localhost:5432/dermaklinic';
 
-  const dbPath = path.join(process.cwd(), 'dev.db');
-  const adapter = new PrismaBetterSqlite3({ url: `file:${dbPath}` });
+  const pool = new Pool({ connectionString });
+  const adapter = new PrismaPg(pool);
   return new PrismaClient({ adapter });
 }
 
