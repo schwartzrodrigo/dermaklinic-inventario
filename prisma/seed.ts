@@ -30,7 +30,7 @@ async function main() {
   const uCatalina = await prisma.usuario.create({
     data: {
       nombre: 'Catalina Frías',
-      email: 'catalina.frias@dermaklinic.cl',
+      email: 'catalina.f@dermaklinic.cl',
       password: passAdmin,
       rol: 'ADMINISTRADOR',
       cargo: 'Directora Médica (Acceso Total)',
