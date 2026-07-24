@@ -40,7 +40,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-004",
@@ -51,7 +51,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-005",
@@ -73,7 +73,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 5,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-007",
@@ -84,7 +84,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 20,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-008",
@@ -95,7 +95,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 20,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-009",
@@ -117,7 +117,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 10,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-011",
@@ -205,7 +205,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-019",
@@ -216,7 +216,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 0,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-020",
@@ -282,7 +282,7 @@ const realProducts = [
     "unidad": "TUBO",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-026",
@@ -293,7 +293,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 8,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-027",
@@ -469,7 +469,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 25,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-043",
@@ -557,7 +557,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 15,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-051",
@@ -568,7 +568,7 @@ const realProducts = [
     "unidad": "PAQUETE",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-052",
@@ -612,7 +612,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-056",
@@ -623,7 +623,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-057",
@@ -634,7 +634,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 0,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-058",
@@ -667,7 +667,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 2,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-061",
@@ -678,7 +678,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 3,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-062",
@@ -854,7 +854,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 0,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-078",
@@ -898,7 +898,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 15,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-082",
@@ -942,7 +942,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 5,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-086",
@@ -953,7 +953,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 5,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-087",
@@ -964,7 +964,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 5,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-088",
@@ -1074,7 +1074,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 10,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-098",
@@ -1107,7 +1107,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 5,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-101",
@@ -1140,7 +1140,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-104",
@@ -1206,7 +1206,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-110",
@@ -1217,7 +1217,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 2,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-111",
@@ -1228,7 +1228,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-112",
@@ -1327,7 +1327,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 5,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-121",
@@ -1349,7 +1349,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 10,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-123",
@@ -1393,7 +1393,7 @@ const realProducts = [
     "unidad": "PAQUETE",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-127",
@@ -1415,7 +1415,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 5,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-129",
@@ -1426,7 +1426,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 10,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-130",
@@ -1503,7 +1503,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-137",
@@ -1514,7 +1514,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-138",
@@ -1558,7 +1558,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-142",
@@ -1613,7 +1613,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 3,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-147",
@@ -1657,7 +1657,7 @@ const realProducts = [
     "unidad": "CAJA",
     "stockMinimo": 2,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-151",
@@ -1690,7 +1690,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 20,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-154",
@@ -1701,7 +1701,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 20,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-155",
@@ -1756,7 +1756,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 0,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-160",
@@ -1877,7 +1877,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 0,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-171",
@@ -1910,7 +1910,7 @@ const realProducts = [
     "unidad": "CAJA",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-174",
@@ -1921,7 +1921,7 @@ const realProducts = [
     "unidad": "CAJA",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-175",
@@ -1932,7 +1932,7 @@ const realProducts = [
     "unidad": "CAJA",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   },
   {
     "sku": "DK-INS-176",
@@ -1943,7 +1943,7 @@ const realProducts = [
     "unidad": "UNIDAD",
     "stockMinimo": 1,
     "stockActual": 0,
-    "precioActual": 1
+    "precioActual": 0
   }
 ];
 const realSuppliers = [
@@ -2126,7 +2126,7 @@ const realSuppliers = [
 ];
 
 async function main() {
-  console.log('Seeding official 176 DermaKlinic inventory items with ZERO stock & 22 real suppliers...');
+  console.log('Seeding official 176 DermaKlinic inventory items with ZERO stock & clean prices...');
 
   // 1. Limpieza inicial
   await prisma.alertaPrecio.deleteMany();
@@ -2176,21 +2176,21 @@ async function main() {
     },
   });
 
-  // 3. Inserción de Proveedores Reales con su Categoría/Tipo
+  // 3. Proveedores Reales
   for (const s of realSuppliers) {
     await prisma.proveedor.create({
       data: s,
     });
   }
 
-  // 4. Inserción masiva de 176 Insumos Reales con STOCK EN CERO (0)
+  // 4. Inserción masiva de 176 Insumos Reales
   for (const p of realProducts) {
     await prisma.producto.create({
       data: p,
     });
   }
 
-  console.log('✅ Base de datos reiniciada a STOCK CERO con 176 productos y 22 proveedores reales');
+  console.log('Base de datos cargada con exito con 176 productos');
 }
 
 main()

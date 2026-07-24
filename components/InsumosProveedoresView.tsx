@@ -215,7 +215,15 @@ export default function InsumosProveedoresView({ onNavigateToRecepcion }: Insumo
                     </div>
                     <div className="text-right pl-3 border-l border-slate-800">
                       <span className="text-3xs text-slate-400 block uppercase">Precio Referencia</span>
-                      <span className="text-sm font-extrabold text-teal-400">${item.precioActual.toLocaleString('es-CL')}</span>
+                      {item.precioActual > 1 ? (
+                        <span className="text-sm font-extrabold text-teal-400">
+                          ${item.precioActual.toLocaleString('es-CL')}
+                        </span>
+                      ) : (
+                        <span className="text-3xs font-normal italic text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded border border-amber-800/40 inline-block">
+                          Sin información
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>

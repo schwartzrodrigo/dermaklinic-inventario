@@ -124,7 +124,49 @@ export default function ProductosView({
     }
   };
 
+  const [editProduct, setEditProduct] = useState<any>(null);
+  const [newCost, setNewCost] = useState<number | ''>('');
+  const [updatingCost, setUpdatingCost] = useState(false);
+
+  const handleOpenEditCost = (prod: any) => {
+    setEditProduct(prod);
+    setNewCost(prod.precioActual > 1 ? prod.precioActual : '');
+  };
+
+  const handleSaveCost = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editProduct) return;
+    setUpdatingCost(true);
+    try {
+      const res = await fetch('/api/productos', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id: editProduct.id,
+          precioActual: Number(newCost) || 0,
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setEditProduct(null);
+        fetchProductos();
+      }
+    } catch (err) {
+      console.error('Error al actualizar el costo:', err);
+    } finally {
+      setUpdatingCost(false);
+    }
+  };
+
   const formatCLP = (val: number) => {
+    if (!val || val <= 1) {
+      return (
+        <span className="text-amber-300/80 font-normal italic text-xs bg-amber-950/30 px-2 py-0.5 rounded border border-amber-800/40 inline-flex items-center gap-1">
+          Sin información
+        </span>
+      );
+    }
     return new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 }).format(val);
   };
 
@@ -280,9 +322,17 @@ export default function ProductosView({
                       <td className="p-3.5 text-right font-extrabold text-white text-sm">
                         {prod.stockActual} <span className="text-slate-400 font-normal text-xs">{prod.unidad}s</span>
                       </td>
-                      <td className="p-3.5 text-right text-slate-400">{prod.stockMinimo} {prod.unidad}s</td>
                       <td className="p-3.5 text-right font-bold text-teal-300">
-                        {formatCLP(prod.precioActual)}
+                        <div className="flex items-center justify-end space-x-2">
+                          <div>{formatCLP(prod.precioActual)}</div>
+                          <button
+                            onClick={() => handleOpenEditCost(prod)}
+                            className="p-1 text-slate-400 hover:text-teal-300 hover:bg-slate-800 rounded-lg transition-colors"
+                            title="Editar costo manualmente"
+                          >
+                            ✏️
+                          </button>
+                        </div>
                       </td>
                       <td className="p-3.5 text-center">
                         {bajoMinimo ? (
@@ -450,6 +500,68 @@ export default function ProductosView({
                   className="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded-xl font-medium flex items-center gap-1"
                 >
                   {saving ? 'Guardando...' : 'Guardar Producto'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Modal para Editar Costo Unitario Manualmente */}
+      {editProduct && (
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+              <h2 className="text-base font-bold text-white flex items-center gap-2">
+                <span>✏️ Actualizar Costo Unitario</span>
+              </h2>
+              <button
+                onClick={() => setEditProduct(null)}
+                className="text-slate-400 hover:text-white"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <form onSubmit={handleSaveCost} className="space-y-4">
+              <div>
+                <span className="text-3xs text-teal-400 uppercase font-semibold block">Producto</span>
+                <p className="font-bold text-white text-sm">{editProduct.nombre}</p>
+                <span className="text-3xs text-slate-400 font-mono">SKU: {editProduct.sku}</span>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
+                  Costo / Precio Unitario (CLP)
+                </label>
+                <input
+                  type="number"
+                  min="0"
+                  value={newCost}
+                  onChange={(e) => setNewCost(e.target.value === '' ? '' : Number(e.target.value))}
+                  placeholder="Ej. 18500 (Deja en 0 si sin información)"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-teal-500 rounded-xl px-3 py-2.5 text-xs text-white font-mono placeholder-slate-600 focus:outline-none"
+                  autoFocus
+                />
+                <p className="text-3xs text-slate-400">
+                  Si dejas el costo en 0, el sistema mostrará la etiqueta **"Sin información"**.
+                </p>
+              </div>
+
+              <div className="flex justify-end space-x-2 pt-3 border-t border-slate-800">
+                <button
+                  type="button"
+                  onClick={() => setEditProduct(null)}
+                  className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl font-medium text-xs"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  disabled={updatingCost}
+                  className="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded-xl font-medium text-xs flex items-center gap-1 shadow-md"
+                >
+                  {updatingCost ? 'Actualizando...' : 'Guardar Costo'}
                 </button>
               </div>
             </form>

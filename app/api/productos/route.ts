@@ -86,3 +86,39 @@ export async function POST(request: Request) {
     );
   }
 }
+
+export async function PUT(request: Request) {
+  try {
+    const body = await request.json();
+    const { id, precioActual, stockMinimo, nombre, marca, categoria, grupo, unidad } = body;
+
+    if (!id) {
+      return NextResponse.json(
+        { success: false, error: 'El ID del producto es obligatorio' },
+        { status: 400 }
+      );
+    }
+
+    const dataToUpdate: any = {};
+    if (precioActual !== undefined) dataToUpdate.precioActual = Number(precioActual);
+    if (stockMinimo !== undefined) dataToUpdate.stockMinimo = Number(stockMinimo);
+    if (nombre) dataToUpdate.nombre = nombre;
+    if (marca !== undefined) dataToUpdate.marca = marca;
+    if (categoria) dataToUpdate.categoria = categoria;
+    if (grupo) dataToUpdate.grupo = grupo;
+    if (unidad) dataToUpdate.unidad = unidad;
+
+    const producto = await db.producto.update({
+      where: { id },
+      data: dataToUpdate,
+    });
+
+    return NextResponse.json({ success: true, producto });
+  } catch (error) {
+    console.error('Error al actualizar producto:', error);
+    return NextResponse.json(
+      { success: false, error: 'Error al actualizar el producto' },
+      { status: 500 }
+    );
+  }
+}
