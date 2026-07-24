@@ -135,20 +135,10 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
                             <span>{u.nombre}</span>
                             {isSelected && <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" />}
                           </div>
-                          <div className="text-slate-400 text-3xs truncate">{u.cargo || u.rol}</div>
+                          <div className="text-slate-400 text-3xs truncate">
+                            {(u.cargo || u.rol).replace(/\s*\(Acceso Total\)|\s*\(Acceso Parcial.*\)/gi, '')}
+                          </div>
                         </div>
-                      </div>
-
-                      <div className="text-right flex-shrink-0">
-                        <span
-                          className={`px-2 py-0.5 rounded-full text-3xs font-extrabold uppercase ${
-                            isRestricted
-                              ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30'
-                              : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
-                          }`}
-                        >
-                          {isRestricted ? 'ACCESO PARCIAL' : 'ACCESO TOTAL'}
-                        </span>
                       </div>
                     </div>
                   );

@@ -10,6 +10,7 @@ export async function GET(request: Request) {
     if (query) {
       where.OR = [
         { nombre: { contains: query } },
+        { categoria: { contains: query } },
         { rut: { contains: query } },
         { contacto: { contains: query } },
         { email: { contains: query } },
@@ -37,7 +38,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { rut, nombre, contacto, telefono, email, direccion } = body;
+    const { rut, nombre, categoria, contacto, telefono, email, direccion } = body;
 
     if (!nombre) {
       return NextResponse.json(
@@ -60,6 +61,7 @@ export async function POST(request: Request) {
       data: {
         rut: rut || null,
         nombre,
+        categoria: categoria || null,
         contacto: contacto || null,
         telefono: telefono || null,
         email: email || null,

@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import DashboardOverview from '@/components/DashboardOverview';
 import ProductosView from '@/components/ProductosView';
 import ProveedoresView from '@/components/ProveedoresView';
+import InsumosProveedoresView from '@/components/InsumosProveedoresView';
 import RecepcionView from '@/components/RecepcionView';
 import BodegaView from '@/components/BodegaView';
 import EgresosView from '@/components/EgresosView';
@@ -190,6 +191,14 @@ export default function Home() {
         )}
 
         {!esRestringido && activeTab === 'proveedores' && <ProveedoresView />}
+
+        {!esRestringido && activeTab === 'insumos-proveedores' && (
+          <InsumosProveedoresView
+            onNavigateToRecepcion={(prodNombre, provNombre) => {
+              setActiveTab('recepcion');
+            }}
+          />
+        )}
 
         {activeTab === 'recepcion' && (
           <RecepcionView

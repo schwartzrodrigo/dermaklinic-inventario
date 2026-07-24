@@ -7,6 +7,7 @@ interface ProveedorItem {
   id: string;
   rut?: string | null;
   nombre: string;
+  categoria?: string | null;
   contacto?: string | null;
   telefono?: string | null;
   email?: string | null;
@@ -22,7 +23,7 @@ interface ProveedorSearchAutocompleteProps {
 }
 
 export default function ProveedorSearchAutocomplete({
-  placeholder = 'Escribe para buscar proveedor (ej. Dermaceuticals, San Andrés, 76.849)...',
+  placeholder = 'Escribe para buscar proveedor por nombre o rubro (ej. Abbvie, Galderma, rellenos y botox, suturas)...',
   onSelectProveedor,
   onSearchQueryChange,
   initialValue = '',
@@ -70,10 +71,11 @@ export default function ProveedorSearchAutocomplete({
 
     const matches = allProveedores
       .map((p) => {
-        const textTarget = `${p.nombre} ${p.rut || ''} ${p.contacto || ''} ${p.email || ''}`.toLowerCase();
+        const textTarget = `${p.nombre} ${p.categoria || ''} ${p.rut || ''} ${p.contacto || ''} ${p.email || ''}`.toLowerCase();
         let score = 0;
 
         if (p.nombre.toLowerCase().startsWith(trimmed)) score += 50;
+        if (p.categoria && p.categoria.toLowerCase().includes(trimmed)) score += 45;
         if (p.rut && p.rut.toLowerCase().includes(trimmed)) score += 40;
         if (textTarget.includes(trimmed)) score += 30;
 
@@ -90,7 +92,7 @@ export default function ProveedorSearchAutocomplete({
       })
       .filter((item) => item.matched)
       .sort((a, b) => b.score - a.score)
-      .slice(0, 6)
+      .slice(0, 8)
       .map((item) => item.proveedor);
 
     setSuggestions(matches);
@@ -216,9 +218,14 @@ export default function ProveedorSearchAutocomplete({
                     <div className="p-1.5 bg-slate-800 rounded-lg text-teal-400 flex-shrink-0 mt-0.5">
                       <Building2 className="w-4 h-4" />
                     </div>
-                    <div className="truncate">
-                      <div className="font-bold text-white text-xs truncate">
-                        {highlightMatch(item.nombre, query)}
+                    <div className="truncate flex-1">
+                      <div className="font-bold text-white text-xs truncate flex items-center justify-between gap-2">
+                        <span>{highlightMatch(item.nombre, query)}</span>
+                        {item.categoria && (
+                          <span className="px-2 py-0.5 rounded-full text-3xs font-extrabold bg-teal-500/20 text-teal-300 border border-teal-500/30 uppercase flex-shrink-0">
+                            {highlightMatch(item.categoria, query)}
+                          </span>
+                        )}
                       </div>
                       <div className="flex items-center space-x-2 text-3xs text-slate-400 mt-0.5">
                         {item.rut && (

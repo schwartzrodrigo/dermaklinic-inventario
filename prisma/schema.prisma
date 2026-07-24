@@ -44,6 +44,7 @@ model Proveedor {
   id               String                 @id @default(uuid())
   rut              String?                @unique
   nombre           String
+  categoria        String?                // e.g. "insumos clínicos", "rellenos y botox", "suturas", etc.
   contacto         String?
   telefono         String?
   email            String?

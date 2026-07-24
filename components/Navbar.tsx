@@ -14,6 +14,7 @@ import {
   PlusCircle,
   Building2,
   Lock,
+  Layers,
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -39,6 +40,7 @@ export default function Navbar({
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'productos', label: 'Catálogo', icon: Package },
     { id: 'proveedores', label: 'Proveedores', icon: Building2 },
+    { id: 'insumos-proveedores', label: 'Insumos por Proveedor', icon: Layers },
     { id: 'recepcion', label: 'Recepciones & Facturas', icon: FileSpreadsheet },
     { id: 'bodega', label: 'Bodega & Lotes', icon: Warehouse },
     { id: 'egresos', label: 'Salidas (Egresos)', icon: ArrowUpRight },
