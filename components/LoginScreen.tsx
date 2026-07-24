@@ -28,9 +28,9 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
       const data = await res.json();
       if (data.success && data.usuarios.length > 0) {
         setUsuarios(data.usuarios);
-        // Default select first user
+        // Default select first user without prefilling password
         setSelectedUser(data.usuarios[0]);
-        setPassword(getDemoPassword(data.usuarios[0].rol));
+        setPassword('');
       }
     } catch (err) {
       console.error('Error al cargar usuarios:', err);
@@ -39,14 +39,9 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
     }
   };
 
-  const getDemoPassword = (rol: string) => {
-    if (rol === 'PERSONAL_CLINICO') return 'clinica123';
-    return 'admin123';
-  };
-
   const handleSelectUser = (u: UserSession) => {
     setSelectedUser(u);
-    setPassword(getDemoPassword(u.rol));
+    setPassword('');
     setErrorMsg('');
   };
 
@@ -168,11 +163,6 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
               <label className="text-xs font-bold text-slate-300 uppercase tracking-wider">
                 2. Contraseña de Acceso
               </label>
-              {selectedUser && (
-                <span className="text-3xs text-teal-400 font-mono">
-                  Clave demo: <code className="bg-slate-800 px-1 py-0.5 rounded">{getDemoPassword(selectedUser.rol)}</code>
-                </span>
-              )}
             </div>
 
             <div className="relative">

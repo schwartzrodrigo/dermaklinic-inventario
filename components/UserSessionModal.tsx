@@ -138,9 +138,6 @@ export default function UserSessionModal({
                         {isActive && <CheckCircle2 className="w-4 h-4 text-teal-400" />}
                       </div>
                       <div className="text-slate-400 text-3xs truncate">{u.cargo || u.rol}</div>
-                      <div className="text-slate-500 font-mono text-3xs mt-0.5">
-                        Clave: <code className="text-teal-300 bg-slate-900 px-1 rounded">{passDemo}</code>
-                      </div>
                     </div>
                   </div>
 
