@@ -12,6 +12,7 @@ import PreciosView from '@/components/PreciosView';
 import AuditoriaView from '@/components/AuditoriaView';
 import MovimientosView from '@/components/MovimientosView';
 import UserSessionModal, { UserSession } from '@/components/UserSessionModal';
+import LoginScreen from '@/components/LoginScreen';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -21,6 +22,7 @@ export default function Home() {
 
   // Active User State
   const [currentUser, setCurrentUser] = useState<UserSession | null>(null);
+  const [initializingSession, setInitializingSession] = useState(true);
   const [openUserModal, setOpenUserModal] = useState(false);
 
   // Modal triggers
@@ -32,27 +34,34 @@ export default function Home() {
     initUserSession();
   }, []);
 
-  const initUserSession = async () => {
+  const initUserSession = () => {
     try {
       const savedUser = localStorage.getItem('dermaklinic_active_user');
       if (savedUser) {
         const u = JSON.parse(savedUser);
         setCurrentUser(u);
         checkRoleRestrictions(u, activeTab);
-        return;
-      }
-
-      // Default initial user (Admin)
-      const res = await fetch('/api/auth/usuarios');
-      const data = await res.json();
-      if (data.success && data.usuarios.length > 0) {
-        const defaultUser = data.usuarios[0]; // Dra. María Paz Soto
-        setCurrentUser(defaultUser);
-        localStorage.setItem('dermaklinic_active_user', JSON.stringify(defaultUser));
+      } else {
+        // Explicito: si no hay usuario guardado, permanece null para mostrar Pantalla de Login
+        setCurrentUser(null);
       }
     } catch (err) {
       console.error('Error al inicializar sesión:', err);
+    } finally {
+      setInitializingSession(false);
     }
+  };
+
+  const handleLoginSuccess = (user: UserSession) => {
+    setCurrentUser(user);
+    localStorage.setItem('dermaklinic_active_user', JSON.stringify(user));
+    checkRoleRestrictions(user, activeTab);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('dermaklinic_active_user');
+    setCurrentUser(null);
+    setActiveTab('dashboard');
   };
 
   const handleSelectUser = (user: UserSession) => {
@@ -111,6 +120,19 @@ export default function Home() {
   const handleOpenNuevaRecepcion = () => {
     setActiveTab('recepcion');
   };
+
+  if (initializingSession) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center space-y-3">
+        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-teal-500"></div>
+        <p className="text-slate-400 text-xs font-medium">Verificando sesión...</p>
+      </div>
+    );
+  }
+
+  if (!currentUser) {
+    return <LoginScreen onLoginSuccess={handleLoginSuccess} />;
+  }
 
   const esRestringido = currentUser?.rol === 'PERSONAL_CLINICO';
 
@@ -202,6 +224,7 @@ export default function Home() {
         onClose={() => setOpenUserModal(false)}
         currentUser={currentUser}
         onSelectUser={handleSelectUser}
+        onLogout={handleLogout}
       />
     </div>
   );

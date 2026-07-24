@@ -17,6 +17,7 @@ interface UserSessionModalProps {
   onClose: () => void;
   currentUser: UserSession | null;
   onSelectUser: (user: UserSession) => void;
+  onLogout?: () => void;
 }
 
 export default function UserSessionModal({
@@ -24,6 +25,7 @@ export default function UserSessionModal({
   onClose,
   currentUser,
   onSelectUser,
+  onLogout,
 }: UserSessionModalProps) {
   const [usuarios, setUsuarios] = useState<UserSession[]>([]);
   const [loading, setLoading] = useState(true);
@@ -161,12 +163,25 @@ export default function UserSessionModal({
           )}
         </div>
 
-        <div className="pt-3 border-t border-slate-800 flex justify-end">
+        <div className="pt-3 border-t border-slate-800 flex justify-between items-center">
+          {onLogout ? (
+            <button
+              onClick={() => {
+                onLogout();
+                onClose();
+              }}
+              className="px-3.5 py-2 bg-rose-950/60 hover:bg-rose-900/80 text-rose-300 border border-rose-800/80 rounded-xl font-bold text-xs transition-all flex items-center space-x-1.5"
+            >
+              <LogIn className="w-4 h-4 rotate-180" />
+              <span>Cerrar Sesión</span>
+            </button>
+          ) : <div></div>}
+
           <button
             onClick={onClose}
             className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl font-medium text-xs"
           >
-            Cerrar
+            Volver
           </button>
         </div>
       </div>
