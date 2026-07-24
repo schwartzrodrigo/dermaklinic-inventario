@@ -14,6 +14,19 @@ export default function ProveedoresView() {
   const [formData, setFormData] = useState({
     rut: '',
     nombre: '',
+    categoria: '',
+    contacto: '',
+    telefono: '',
+    email: '',
+    direccion: '',
+  });
+
+  const [editProveedor, setEditProveedor] = useState<any>(null);
+  const [editFormData, setEditFormData] = useState({
+    id: '',
+    rut: '',
+    nombre: '',
+    categoria: '',
     contacto: '',
     telefono: '',
     email: '',
@@ -22,6 +35,45 @@ export default function ProveedoresView() {
 
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState('');
+
+  const handleOpenEditProveedor = (p: any) => {
+    setEditProveedor(p);
+    setEditFormData({
+      id: p.id,
+      rut: p.rut || '',
+      nombre: p.nombre,
+      categoria: p.categoria || '',
+      contacto: p.contacto || '',
+      telefono: p.telefono || '',
+      email: p.email || '',
+      direccion: p.direccion || '',
+    });
+  };
+
+  const handleSaveEditProveedor = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormError('');
+    setSaving(true);
+    try {
+      const res = await fetch('/api/proveedores', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(editFormData),
+      });
+
+      const data = await res.json();
+      if (!data.success) {
+        setFormError(data.error || 'Error al actualizar el proveedor');
+      } else {
+        setEditProveedor(null);
+        fetchProveedores();
+      }
+    } catch (err) {
+      setFormError('Error de red al actualizar el proveedor');
+    } finally {
+      setSaving(false);
+    }
+  };
 
   useEffect(() => {
     fetchProveedores();
@@ -64,6 +116,7 @@ export default function ProveedoresView() {
         setFormData({
           rut: '',
           nombre: '',
+          categoria: '',
           contacto: '',
           telefono: '',
           email: '',
@@ -138,12 +191,23 @@ export default function ProveedoresView() {
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="font-extrabold text-white text-base">{p.nombre}</h3>
-                    {p.rut && <span className="font-mono text-teal-300 font-bold text-xs">RUT: {p.rut}</span>}
+                    <h3 className="font-extrabold text-white text-base flex items-center gap-2">
+                      <span>{p.nombre}</span>
+                    </h3>
+                    {p.categoria && (
+                      <span className="inline-block mt-1 px-2 py-0.5 bg-teal-500/20 text-teal-300 border border-teal-500/30 text-3xs font-extrabold rounded-full uppercase">
+                        {p.categoria}
+                      </span>
+                    )}
+                    {p.rut && <div className="font-mono text-teal-300 font-bold text-xs mt-1">RUT: {p.rut}</div>}
                   </div>
-                  <div className="p-2 bg-slate-800 rounded-xl text-teal-400">
-                    <Building2 className="w-5 h-5" />
-                  </div>
+                  <button
+                    onClick={() => handleOpenEditProveedor(p)}
+                    className="p-1.5 bg-slate-800 hover:bg-teal-600 text-slate-300 hover:text-white rounded-xl transition-all text-xs font-medium border border-slate-700 flex items-center gap-1"
+                    title="Editar nombre, rubro o contacto de este proveedor"
+                  >
+                    <span>✏️ Editar</span>
+                  </button>
                 </div>
 
                 <div className="space-y-1.5 text-xs text-slate-300 pt-2 border-t border-slate-800/80">
@@ -288,6 +352,131 @@ export default function ProveedoresView() {
                   className="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded-xl font-medium flex items-center gap-1"
                 >
                   {saving ? 'Guardando...' : 'Guardar Proveedor'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Modal para Editar Proveedor */}
+      {editProveedor && (
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl space-y-4 p-6">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                ✏️ Editar Empresa Proveedora
+              </h3>
+              <button onClick={() => setEditProveedor(null)} className="text-slate-400 hover:text-white">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {formError && (
+              <div className="p-3 bg-rose-950/50 border border-rose-800 text-rose-200 text-xs rounded-xl">
+                {formError}
+              </div>
+            )}
+
+            <form onSubmit={handleSaveEditProveedor} className="space-y-4 text-xs">
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block font-semibold text-slate-300 mb-1">Nombre de la Empresa *</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Ej. Galderma, Abbvie, Medtronic"
+                    value={editFormData.nombre}
+                    onChange={(e) => setEditFormData({ ...editFormData, nombre: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white font-bold"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-semibold text-slate-300 mb-1">Categoría / Rubro</label>
+                  <input
+                    type="text"
+                    placeholder="Ej. Rellenos y botox, Suturas, Anestesia"
+                    value={editFormData.categoria}
+                    onChange={(e) => setEditFormData({ ...editFormData, categoria: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block font-semibold text-slate-300 mb-1">RUT Proveedor</label>
+                  <input
+                    type="text"
+                    placeholder="Ej. 76.849.201-9"
+                    value={editFormData.rut}
+                    onChange={(e) => setEditFormData({ ...editFormData, rut: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white font-mono"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-semibold text-slate-300 mb-1">Persona de Contacto</label>
+                  <input
+                    type="text"
+                    placeholder="Ej. Juan Pérez"
+                    value={editFormData.contacto}
+                    onChange={(e) => setEditFormData({ ...editFormData, contacto: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block font-semibold text-slate-300 mb-1">Teléfono</label>
+                  <input
+                    type="text"
+                    placeholder="Ej. +56 9 1234 5678"
+                    value={editFormData.telefono}
+                    onChange={(e) => setEditFormData({ ...editFormData, telefono: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-semibold text-slate-300 mb-1">Email de Pedidos</label>
+                  <input
+                    type="email"
+                    placeholder="Ej. ventas@proveedor.cl"
+                    value={editFormData.email}
+                    onChange={(e) => setEditFormData({ ...editFormData, email: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block font-semibold text-slate-300 mb-1">Dirección Comercial</label>
+                <input
+                  type="text"
+                  placeholder="Ej. Av. Vitacura 2900, Santiago"
+                  value={editFormData.direccion}
+                  onChange={(e) => setEditFormData({ ...editFormData, direccion: e.target.value })}
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white"
+                />
+              </div>
+
+              <div className="flex justify-end space-x-2 pt-3 border-t border-slate-800">
+                <button
+                  type="button"
+                  onClick={() => setEditProveedor(null)}
+                  className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl font-medium"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  disabled={saving}
+                  className="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded-xl font-medium flex items-center gap-1 shadow-md"
+                >
+                  {saving ? 'Guardando...' : 'Guardar Cambios'}
                 </button>
               </div>
             </form>

@@ -125,15 +125,33 @@ export default function ProductosView({
   };
 
   const [editProduct, setEditProduct] = useState<any>(null);
-  const [newCost, setNewCost] = useState<number | ''>('');
+  const [editFormData, setEditFormData] = useState<any>({
+    id: '',
+    nombre: '',
+    marca: '',
+    categoria: 'INSUMO_MEDICO',
+    grupo: 'ESTERIL',
+    unidad: 'UNIDAD',
+    stockMinimo: 5,
+    precioActual: 0,
+  });
   const [updatingCost, setUpdatingCost] = useState(false);
 
-  const handleOpenEditCost = (prod: any) => {
+  const handleOpenEditProduct = (prod: any) => {
     setEditProduct(prod);
-    setNewCost(prod.precioActual > 1 ? prod.precioActual : '');
+    setEditFormData({
+      id: prod.id,
+      nombre: prod.nombre,
+      marca: prod.marca || '',
+      categoria: prod.categoria,
+      grupo: prod.grupo,
+      unidad: prod.unidad,
+      stockMinimo: prod.stockMinimo,
+      precioActual: prod.precioActual > 1 ? prod.precioActual : 0,
+    });
   };
 
-  const handleSaveCost = async (e: React.FormEvent) => {
+  const handleSaveProduct = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editProduct) return;
     setUpdatingCost(true);
@@ -142,8 +160,9 @@ export default function ProductosView({
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          id: editProduct.id,
-          precioActual: Number(newCost) || 0,
+          ...editFormData,
+          precioActual: Number(editFormData.precioActual) || 0,
+          stockMinimo: Number(editFormData.stockMinimo) || 0,
         }),
       });
 
@@ -153,7 +172,7 @@ export default function ProductosView({
         fetchProductos();
       }
     } catch (err) {
-      console.error('Error al actualizar el costo:', err);
+      console.error('Error al actualizar el insumo:', err);
     } finally {
       setUpdatingCost(false);
     }
@@ -326,11 +345,11 @@ export default function ProductosView({
                         <div className="flex items-center justify-end space-x-2">
                           <div>{formatCLP(prod.precioActual)}</div>
                           <button
-                            onClick={() => handleOpenEditCost(prod)}
-                            className="p-1 text-slate-400 hover:text-teal-300 hover:bg-slate-800 rounded-lg transition-colors"
-                            title="Editar costo manualmente"
+                            onClick={() => handleOpenEditProduct(prod)}
+                            className="p-1.5 bg-slate-800 hover:bg-teal-600 text-slate-300 hover:text-white rounded-lg transition-all text-xs font-medium flex items-center gap-1 border border-slate-700"
+                            title="Editar nombre, marca, categoría o precio de este insumo"
                           >
-                            ✏️
+                            <span>✏️ Editar</span>
                           </button>
                         </div>
                       </td>
@@ -507,15 +526,16 @@ export default function ProductosView({
         </div>
       )}
 
-      {/* Modal para Editar Costo Unitario Manualmente */}
+      {/* Modal para Editar Insumo Completo (Nombre, Precio, Marca, Categoría, Unidad) */}
       {editProduct && (
         <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 space-y-4 shadow-2xl">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-lg p-6 space-y-4 shadow-2xl">
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <h2 className="text-base font-bold text-white flex items-center gap-2">
-                <span>✏️ Actualizar Costo Unitario</span>
+                <span>✏️ Editar Insumo / Producto</span>
               </h2>
               <button
+                type="button"
                 onClick={() => setEditProduct(null)}
                 className="text-slate-400 hover:text-white"
               >
@@ -523,28 +543,126 @@ export default function ProductosView({
               </button>
             </div>
 
-            <form onSubmit={handleSaveCost} className="space-y-4">
-              <div>
-                <span className="text-3xs text-teal-400 uppercase font-semibold block">Producto</span>
-                <p className="font-bold text-white text-sm">{editProduct.nombre}</p>
+            <form onSubmit={handleSaveProduct} className="space-y-4">
+              <div className="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800">
                 <span className="text-3xs text-slate-400 font-mono">SKU: {editProduct.sku}</span>
+                <span className="text-3xs text-teal-400 font-bold uppercase">Stock Actual: {editProduct.stockActual} {editProduct.unidad}s</span>
               </div>
 
-              <div className="space-y-1.5">
+              {/* Nombre del Insumo */}
+              <div className="space-y-1">
+                <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
+                  Nombre del Insumo / Producto *
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={editFormData.nombre}
+                  onChange={(e) => setEditFormData({ ...editFormData, nombre: e.target.value })}
+                  placeholder="Ej. Juvederm Voluma, Aguja 30G, etc."
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-teal-500 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-600 focus:outline-none"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                {/* Marca */}
+                <div className="space-y-1">
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
+                    Marca / Fabricante
+                  </label>
+                  <input
+                    type="text"
+                    value={editFormData.marca}
+                    onChange={(e) => setEditFormData({ ...editFormData, marca: e.target.value })}
+                    placeholder="Ej. Allergan, Galderma"
+                    className="w-full bg-slate-950 border border-slate-800 focus:border-teal-500 rounded-xl px-3 py-2 text-xs text-white"
+                  />
+                </div>
+
+                {/* Categoría */}
+                <div className="space-y-1">
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
+                    Categoría *
+                  </label>
+                  <select
+                    value={editFormData.categoria}
+                    onChange={(e) => setEditFormData({ ...editFormData, categoria: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 focus:border-teal-500 rounded-xl px-3 py-2 text-xs text-white"
+                  >
+                    <option value="INSUMO_MEDICO">Uso Médico</option>
+                    <option value="INSUMO_ESTETICO">Uso Estético</option>
+                    <option value="INSUMO_ESCRITORIO">Escritorio</option>
+                    <option value="INSUMO_ASEO">Aseo</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3">
+                {/* Grupo Sterilidad */}
+                <div className="space-y-1">
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
+                    Grupo *
+                  </label>
+                  <select
+                    value={editFormData.grupo}
+                    onChange={(e) => setEditFormData({ ...editFormData, grupo: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 focus:border-teal-500 rounded-xl px-3 py-2 text-xs text-white"
+                  >
+                    <option value="ESTERIL">Estéril</option>
+                    <option value="NO_ESTERIL">No Estéril</option>
+                  </select>
+                </div>
+
+                {/* Unidad */}
+                <div className="space-y-1">
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
+                    Unidad *
+                  </label>
+                  <select
+                    value={editFormData.unidad}
+                    onChange={(e) => setEditFormData({ ...editFormData, unidad: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 focus:border-teal-500 rounded-xl px-3 py-2 text-xs text-white"
+                  >
+                    <option value="UNIDAD">Unidad</option>
+                    <option value="CAJA">Caja</option>
+                    <option value="PAQUETE">Paquete</option>
+                    <option value="FRASCO">Frasco</option>
+                    <option value="BOTELLA">Botella</option>
+                    <option value="TUBO">Tubo</option>
+                    <option value="ROLLO">Rollo</option>
+                  </select>
+                </div>
+
+                {/* Stock Mínimo */}
+                <div className="space-y-1">
+                  <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
+                    Stock Mín.
+                  </label>
+                  <input
+                    type="number"
+                    min="0"
+                    value={editFormData.stockMinimo}
+                    onChange={(e) => setEditFormData({ ...editFormData, stockMinimo: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 focus:border-teal-500 rounded-xl px-3 py-2 text-xs text-white"
+                  />
+                </div>
+              </div>
+
+              {/* Costo / Precio Unitario */}
+              <div className="space-y-1">
                 <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
                   Costo / Precio Unitario (CLP)
                 </label>
                 <input
                   type="number"
                   min="0"
-                  value={newCost}
-                  onChange={(e) => setNewCost(e.target.value === '' ? '' : Number(e.target.value))}
-                  placeholder="Ej. 18500 (Deja en 0 si sin información)"
-                  className="w-full bg-slate-950 border border-slate-800 focus:border-teal-500 rounded-xl px-3 py-2.5 text-xs text-white font-mono placeholder-slate-600 focus:outline-none"
-                  autoFocus
+                  value={editFormData.precioActual}
+                  onChange={(e) => setEditFormData({ ...editFormData, precioActual: e.target.value })}
+                  placeholder="0 para Sin Información"
+                  className="w-full bg-slate-950 border border-slate-800 focus:border-teal-500 rounded-xl px-3 py-2.5 text-xs text-white font-mono"
                 />
                 <p className="text-3xs text-slate-400">
-                  Si dejas el costo en 0, el sistema mostrará la etiqueta **"Sin información"**.
+                  Si dejas el precio en 0 o 1, se mostrará la etiqueta **"Sin información"**.
                 </p>
               </div>
 
@@ -561,7 +679,7 @@ export default function ProductosView({
                   disabled={updatingCost}
                   className="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded-xl font-medium text-xs flex items-center gap-1 shadow-md"
                 >
-                  {updatingCost ? 'Actualizando...' : 'Guardar Costo'}
+                  {updatingCost ? 'Guardando...' : 'Guardar Cambios'}
                 </button>
               </div>
             </form>

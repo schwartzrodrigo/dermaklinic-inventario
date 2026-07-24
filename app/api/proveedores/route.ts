@@ -78,3 +78,45 @@ export async function POST(request: Request) {
     );
   }
 }
+
+export async function PUT(request: Request) {
+  try {
+    const body = await request.json();
+    const { id, rut, nombre, categoria, contacto, telefono, email, direccion } = body;
+
+    if (!id) {
+      return NextResponse.json(
+        { success: false, error: 'El ID del proveedor es obligatorio' },
+        { status: 400 }
+      );
+    }
+
+    if (!nombre) {
+      return NextResponse.json(
+        { success: false, error: 'El nombre del proveedor es obligatorio' },
+        { status: 400 }
+      );
+    }
+
+    const proveedor = await db.proveedor.update({
+      where: { id },
+      data: {
+        rut: rut || null,
+        nombre,
+        categoria: categoria || null,
+        contacto: contacto || null,
+        telefono: telefono || null,
+        email: email || null,
+        direccion: direccion || null,
+      },
+    });
+
+    return NextResponse.json({ success: true, proveedor });
+  } catch (error) {
+    console.error('Error al actualizar proveedor:', error);
+    return NextResponse.json(
+      { success: false, error: 'Error al actualizar el proveedor' },
+      { status: 500 }
+    );
+  }
+}
