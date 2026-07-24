@@ -17,7 +17,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 13990
   },
   {
@@ -28,7 +28,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 11,
+    "stockActual": 0,
     "precioActual": 386
   },
   {
@@ -39,7 +39,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -50,7 +50,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -61,7 +61,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 8,
+    "stockActual": 0,
     "precioActual": 4990
   },
   {
@@ -72,7 +72,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 70,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -83,7 +83,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 20,
-    "stockActual": 180,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -94,7 +94,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 20,
-    "stockActual": 150,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -105,7 +105,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 20,
-    "stockActual": 218,
+    "stockActual": 0,
     "precioActual": 7848
   },
   {
@@ -116,7 +116,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 12,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -127,7 +127,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 6,
+    "stockActual": 0,
     "precioActual": 2433
   },
   {
@@ -138,7 +138,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 5240
   },
   {
@@ -149,7 +149,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 1,
-    "stockActual": 3,
+    "stockActual": 0,
     "precioActual": 517
   },
   {
@@ -160,7 +160,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 7,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -171,7 +171,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 27
   },
   {
@@ -182,7 +182,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 59990
   },
   {
@@ -193,7 +193,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 8,
+    "stockActual": 0,
     "precioActual": 2000
   },
   {
@@ -204,7 +204,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -215,7 +215,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -226,7 +226,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "PAQUETE",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 1735
   },
   {
@@ -237,7 +237,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 30,
-    "stockActual": 98,
+    "stockActual": 0,
     "precioActual": 42
   },
   {
@@ -248,7 +248,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 21,
+    "stockActual": 0,
     "precioActual": 702
   },
   {
@@ -259,7 +259,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 17000
   },
   {
@@ -270,7 +270,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 45,
+    "stockActual": 0,
     "precioActual": 605
   },
   {
@@ -281,7 +281,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "TUBO",
     "stockMinimo": 1,
-    "stockActual": 7,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -292,7 +292,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 8,
-    "stockActual": 36,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -303,7 +303,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 8,
-    "stockActual": 33,
+    "stockActual": 0,
     "precioActual": 6625
   },
   {
@@ -314,7 +314,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 10676
   },
   {
@@ -325,7 +325,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 6636
   },
   {
@@ -336,7 +336,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 6,
+    "stockActual": 0,
     "precioActual": 16000
   },
   {
@@ -347,7 +347,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 4,
-    "stockActual": 24,
+    "stockActual": 0,
     "precioActual": 600000
   },
   {
@@ -358,7 +358,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 15,
-    "stockActual": 38,
+    "stockActual": 0,
     "precioActual": 990
   },
   {
@@ -369,7 +369,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 15,
-    "stockActual": 19,
+    "stockActual": 0,
     "precioActual": 990
   },
   {
@@ -380,7 +380,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 27
   },
   {
@@ -391,7 +391,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 45,
+    "stockActual": 0,
     "precioActual": 126
   },
   {
@@ -402,7 +402,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 52,
+    "stockActual": 0,
     "precioActual": 116
   },
   {
@@ -413,7 +413,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 90,
+    "stockActual": 0,
     "precioActual": 999
   },
   {
@@ -424,7 +424,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 60,
+    "stockActual": 0,
     "precioActual": 168
   },
   {
@@ -435,7 +435,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 19,
+    "stockActual": 0,
     "precioActual": 1423
   },
   {
@@ -446,7 +446,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 20000
   },
   {
@@ -457,7 +457,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 5,
+    "stockActual": 0,
     "precioActual": 15
   },
   {
@@ -468,7 +468,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 25,
-    "stockActual": 50,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -479,7 +479,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 4,
+    "stockActual": 0,
     "precioActual": 5330
   },
   {
@@ -490,7 +490,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 3,
-    "stockActual": 7,
+    "stockActual": 0,
     "precioActual": 997
   },
   {
@@ -501,7 +501,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 3,
+    "stockActual": 0,
     "precioActual": 5912
   },
   {
@@ -512,7 +512,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 5,
+    "stockActual": 0,
     "precioActual": 3000
   },
   {
@@ -523,7 +523,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 3265
   },
   {
@@ -534,7 +534,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "PAQUETE",
     "stockMinimo": 1,
-    "stockActual": 4,
+    "stockActual": 0,
     "precioActual": 16558
   },
   {
@@ -545,7 +545,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 9,
+    "stockActual": 0,
     "precioActual": 3360
   },
   {
@@ -556,7 +556,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 15,
-    "stockActual": 94,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -567,7 +567,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "PAQUETE",
     "stockMinimo": 1,
-    "stockActual": 4,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -578,7 +578,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 30,
+    "stockActual": 0,
     "precioActual": 305
   },
   {
@@ -589,7 +589,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 4,
-    "stockActual": 6,
+    "stockActual": 0,
     "precioActual": 2
   },
   {
@@ -600,7 +600,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 4,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 2
   },
   {
@@ -611,7 +611,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -622,7 +622,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -633,7 +633,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -644,7 +644,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 36667
   },
   {
@@ -655,7 +655,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 6,
+    "stockActual": 0,
     "precioActual": 460000
   },
   {
@@ -666,7 +666,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 7,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -677,7 +677,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 3,
-    "stockActual": 15,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -688,7 +688,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 4,
+    "stockActual": 0,
     "precioActual": 127
   },
   {
@@ -699,7 +699,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 4,
+    "stockActual": 0,
     "precioActual": 123899
   },
   {
@@ -710,7 +710,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 14990
   },
   {
@@ -721,7 +721,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 7990
   },
   {
@@ -732,7 +732,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 4,
+    "stockActual": 0,
     "precioActual": 38000
   },
   {
@@ -743,7 +743,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 5,
+    "stockActual": 0,
     "precioActual": 30
   },
   {
@@ -754,7 +754,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "BOTELLA",
     "stockMinimo": 0,
-    "stockActual": 4,
+    "stockActual": 0,
     "precioActual": 244
   },
   {
@@ -765,7 +765,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 30,
-    "stockActual": 99,
+    "stockActual": 0,
     "precioActual": 849
   },
   {
@@ -776,7 +776,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 918
   },
   {
@@ -787,7 +787,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 2,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 146
   },
   {
@@ -798,7 +798,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 6,
-    "stockActual": 12,
+    "stockActual": 0,
     "precioActual": 121
   },
   {
@@ -809,7 +809,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "PAQUETE",
     "stockMinimo": 2,
-    "stockActual": 3,
+    "stockActual": 0,
     "precioActual": 5553
   },
   {
@@ -820,7 +820,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -831,7 +831,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 18490
   },
   {
@@ -842,7 +842,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -853,7 +853,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -864,7 +864,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 25,
+    "stockActual": 0,
     "precioActual": 338
   },
   {
@@ -875,7 +875,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 15,
-    "stockActual": 30,
+    "stockActual": 0,
     "precioActual": 17
   },
   {
@@ -886,7 +886,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 25,
-    "stockActual": 50,
+    "stockActual": 0,
     "precioActual": 17
   },
   {
@@ -897,7 +897,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 15,
-    "stockActual": 38,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -908,7 +908,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 5,
+    "stockActual": 0,
     "precioActual": 1127
   },
   {
@@ -919,7 +919,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 9,
+    "stockActual": 0,
     "precioActual": 190
   },
   {
@@ -930,7 +930,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 9,
+    "stockActual": 0,
     "precioActual": 656
   },
   {
@@ -941,7 +941,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 26,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -952,7 +952,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 14,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -963,7 +963,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 40,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -974,7 +974,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 185
   },
   {
@@ -985,7 +985,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 13,
+    "stockActual": 0,
     "precioActual": 26990
   },
   {
@@ -996,7 +996,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 26990
   },
   {
@@ -1007,7 +1007,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -1018,7 +1018,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -1029,7 +1029,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 4,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -1040,7 +1040,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -1051,7 +1051,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 3,
+    "stockActual": 0,
     "precioActual": 50000
   },
   {
@@ -1062,7 +1062,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 25,
-    "stockActual": 144,
+    "stockActual": 0,
     "precioActual": 5
   },
   {
@@ -1073,7 +1073,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 38,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1084,7 +1084,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 25,
-    "stockActual": 134,
+    "stockActual": 0,
     "precioActual": 19
   },
   {
@@ -1095,7 +1095,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 25,
-    "stockActual": 120,
+    "stockActual": 0,
     "precioActual": 811
   },
   {
@@ -1106,7 +1106,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 69,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1117,7 +1117,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 20,
-    "stockActual": 90,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -1128,7 +1128,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 25,
-    "stockActual": 56,
+    "stockActual": 0,
     "precioActual": 160
   },
   {
@@ -1139,7 +1139,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 3,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1150,7 +1150,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 23,
+    "stockActual": 0,
     "precioActual": 2
   },
   {
@@ -1161,7 +1161,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 13,
+    "stockActual": 0,
     "precioActual": 1344
   },
   {
@@ -1172,7 +1172,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 4936
   },
   {
@@ -1183,7 +1183,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 40,
-    "stockActual": 120,
+    "stockActual": 0,
     "precioActual": 481
   },
   {
@@ -1194,7 +1194,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 11,
+    "stockActual": 0,
     "precioActual": 850
   },
   {
@@ -1205,7 +1205,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1216,7 +1216,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 27,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1227,7 +1227,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 6,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1238,7 +1238,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 502
   },
   {
@@ -1249,7 +1249,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 20,
-    "stockActual": 56,
+    "stockActual": 0,
     "precioActual": 1142
   },
   {
@@ -1260,7 +1260,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 20,
-    "stockActual": 6,
+    "stockActual": 0,
     "precioActual": 2217
   },
   {
@@ -1271,7 +1271,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 15,
-    "stockActual": 88,
+    "stockActual": 0,
     "precioActual": 1531
   },
   {
@@ -1282,7 +1282,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 5,
+    "stockActual": 0,
     "precioActual": 5000
   },
   {
@@ -1293,7 +1293,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 3,
-    "stockActual": 5,
+    "stockActual": 0,
     "precioActual": 2400
   },
   {
@@ -1304,7 +1304,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 5,
+    "stockActual": 0,
     "precioActual": 1490
   },
   {
@@ -1315,7 +1315,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "TUBO",
     "stockMinimo": 1,
-    "stockActual": 14,
+    "stockActual": 0,
     "precioActual": 6800
   },
   {
@@ -1326,7 +1326,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 16,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1337,7 +1337,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 6,
-    "stockActual": 10,
+    "stockActual": 0,
     "precioActual": 400
   },
   {
@@ -1348,7 +1348,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 93,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1359,7 +1359,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 8,
-    "stockActual": 72,
+    "stockActual": 0,
     "precioActual": 1029
   },
   {
@@ -1370,7 +1370,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 81,
+    "stockActual": 0,
     "precioActual": 1301
   },
   {
@@ -1381,7 +1381,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1990
   },
   {
@@ -1392,7 +1392,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "PAQUETE",
     "stockMinimo": 1,
-    "stockActual": 4,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1403,7 +1403,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 0,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 90000
   },
   {
@@ -1414,7 +1414,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 51,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1425,7 +1425,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 23,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1436,7 +1436,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 15,
-    "stockActual": 55,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -1447,7 +1447,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 15,
-    "stockActual": 55,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -1458,7 +1458,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 11,
+    "stockActual": 0,
     "precioActual": 2833
   },
   {
@@ -1469,7 +1469,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 6,
+    "stockActual": 0,
     "precioActual": 3690
   },
   {
@@ -1480,7 +1480,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 5000
   },
   {
@@ -1491,7 +1491,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 20000
   },
   {
@@ -1502,7 +1502,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 9,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1513,7 +1513,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 3,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1524,7 +1524,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 15,
+    "stockActual": 0,
     "precioActual": 509
   },
   {
@@ -1535,7 +1535,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 6,
-    "stockActual": 24,
+    "stockActual": 0,
     "precioActual": 2780
   },
   {
@@ -1546,7 +1546,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 23000
   },
   {
@@ -1557,7 +1557,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1568,7 +1568,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 4,
-    "stockActual": 32,
+    "stockActual": 0,
     "precioActual": 1688
   },
   {
@@ -1579,7 +1579,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 4,
-    "stockActual": 49,
+    "stockActual": 0,
     "precioActual": 2700
   },
   {
@@ -1590,7 +1590,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 32,
+    "stockActual": 0,
     "precioActual": 1655
   },
   {
@@ -1601,7 +1601,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 34,
+    "stockActual": 0,
     "precioActual": 1471
   },
   {
@@ -1612,7 +1612,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 3,
-    "stockActual": 20,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1623,7 +1623,7 @@ const realProducts = [
     "grupo": "ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 40,
+    "stockActual": 0,
     "precioActual": 66
   },
   {
@@ -1634,7 +1634,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 66,
+    "stockActual": 0,
     "precioActual": 5092
   },
   {
@@ -1645,7 +1645,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 9,
+    "stockActual": 0,
     "precioActual": 600000
   },
   {
@@ -1656,7 +1656,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 2,
-    "stockActual": 6,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1667,7 +1667,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 12,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -1678,7 +1678,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 25,
-    "stockActual": 70,
+    "stockActual": 0,
     "precioActual": 17800
   },
   {
@@ -1689,7 +1689,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 20,
-    "stockActual": 126,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1700,7 +1700,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 20,
-    "stockActual": 36,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1711,7 +1711,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 20,
-    "stockActual": 20,
+    "stockActual": 0,
     "precioActual": 2800
   },
   {
@@ -1722,7 +1722,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 36,
+    "stockActual": 0,
     "precioActual": 2000
   },
   {
@@ -1733,7 +1733,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 80,
+    "stockActual": 0,
     "precioActual": 3014
   },
   {
@@ -1744,7 +1744,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 20,
+    "stockActual": 0,
     "precioActual": 198
   },
   {
@@ -1755,7 +1755,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1766,7 +1766,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 0,
-    "stockActual": 100,
+    "stockActual": 0,
     "precioActual": 3000
   },
   {
@@ -1777,7 +1777,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -1788,7 +1788,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 120,
+    "stockActual": 0,
     "precioActual": 160
   },
   {
@@ -1799,7 +1799,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 10,
-    "stockActual": 20,
+    "stockActual": 0,
     "precioActual": 53
   },
   {
@@ -1810,7 +1810,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "PAQUETE",
     "stockMinimo": 2,
-    "stockActual": 6,
+    "stockActual": 0,
     "precioActual": 1000
   },
   {
@@ -1821,7 +1821,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 2,
-    "stockActual": 7,
+    "stockActual": 0,
     "precioActual": 0
   },
   {
@@ -1832,7 +1832,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 45000
   },
   {
@@ -1843,7 +1843,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 3,
+    "stockActual": 0,
     "precioActual": 45000
   },
   {
@@ -1854,7 +1854,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 6
   },
   {
@@ -1865,7 +1865,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 5,
-    "stockActual": 15,
+    "stockActual": 0,
     "precioActual": 7500
   },
   {
@@ -1876,7 +1876,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 0,
-    "stockActual": 7,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1887,7 +1887,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 10,
+    "stockActual": 0,
     "precioActual": 300000
   },
   {
@@ -1898,7 +1898,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 4,
+    "stockActual": 0,
     "precioActual": 300000
   },
   {
@@ -1909,7 +1909,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1920,7 +1920,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1931,7 +1931,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "CAJA",
     "stockMinimo": 1,
-    "stockActual": 1,
+    "stockActual": 0,
     "precioActual": 1
   },
   {
@@ -1942,7 +1942,7 @@ const realProducts = [
     "grupo": "NO_ESTERIL",
     "unidad": "UNIDAD",
     "stockMinimo": 1,
-    "stockActual": 2,
+    "stockActual": 0,
     "precioActual": 1
   }
 ];
@@ -2126,7 +2126,7 @@ const realSuppliers = [
 ];
 
 async function main() {
-  console.log('Seeding official 176 DermaKlinic inventory items & 22 real suppliers...');
+  console.log('Seeding official 176 DermaKlinic inventory items with ZERO stock & 22 real suppliers...');
 
   // 1. Limpieza inicial
   await prisma.alertaPrecio.deleteMany();
@@ -2143,7 +2143,7 @@ async function main() {
   const passAdmin = await bcrypt.hash('admin123', 10);
   const passParcial = await bcrypt.hash('clinica123', 10);
 
-  const uCatalina = await prisma.usuario.create({
+  await prisma.usuario.create({
     data: {
       nombre: 'Catalina Frías',
       email: 'catalina.f@dermaklinic.cl',
@@ -2154,7 +2154,7 @@ async function main() {
     },
   });
 
-  const uRodrigo = await prisma.usuario.create({
+  await prisma.usuario.create({
     data: {
       nombre: 'Rodrigo Schwartz',
       email: 'schwartz.rodrigo@gmail.com',
@@ -2177,77 +2177,20 @@ async function main() {
   });
 
   // 3. Inserción de Proveedores Reales con su Categoría/Tipo
-  const createdSuppliers: Record<string, any> = {};
   for (const s of realSuppliers) {
-    const created = await prisma.proveedor.create({
+    await prisma.proveedor.create({
       data: s,
     });
-    createdSuppliers[s.nombre] = created;
   }
 
-  // 4. Inserción masiva de Insumos Reales
-  const createdProducts: Record<string, any> = {};
+  // 4. Inserción masiva de 176 Insumos Reales con STOCK EN CERO (0)
   for (const p of realProducts) {
-    const created = await prisma.producto.create({
+    await prisma.producto.create({
       data: p,
     });
-    createdProducts[p.nombre] = created;
   }
 
-  // 5. Vincular compras iniciales insumo-proveedor para historial
-  const provAbbvie = createdSuppliers['Abbvie (Juvederm y allergan)'];
-  const provGalderma = createdSuppliers['Galderma'];
-  const provMedtronic = createdSuppliers['Medtronic'];
-  const provDimerc = createdSuppliers['Dimerc'];
-
-  if (provAbbvie && provMedtronic) {
-    const doc1 = await prisma.documentoCompra.create({
-      data: {
-        tipo: 'FACTURA',
-        numeroDoc: 'F-1002',
-        proveedorId: provAbbvie.id,
-        usuarioId: uRodrigo.id,
-        usuarioNombre: uRodrigo.nombre,
-        fechaEmision: new Date('2026-06-15'),
-        fechaRecepcion: new Date('2026-06-16T11:00:00Z'),
-        observaciones: 'Compra de Toxina y Rellenos',
-        totalDoc: 1250000,
-      },
-    });
-
-    for (const [pName, pObj] of Object.entries(createdProducts)) {
-      if (pName.toLowerCase().includes('botox') || pName.toLowerCase().includes('hialurónico') || pName.toLowerCase().includes('juvederm')) {
-        await prisma.loteProducto.create({
-          data: {
-            productoId: pObj.id,
-            documentoCompraId: doc1.id,
-            numeroLote: 'LOT-ABB-2026',
-            fechaVencimiento: new Date('2027-08-30'),
-            cantidadInicial: pObj.stockActual || 5,
-            cantidadDisponible: pObj.stockActual || 5,
-            costoUnitario: pObj.precioActual || 120000,
-            fechaIngreso: new Date('2026-06-16T11:00:00Z'),
-          },
-        });
-
-        await prisma.movimientoInventario.create({
-          data: {
-            productoId: pObj.id,
-            usuarioId: uRodrigo.id,
-            tipoMovimiento: 'INGRESO',
-            motivo: 'COMPRA',
-            cantidad: pObj.stockActual || 5,
-            costoUnitario: pObj.precioActual || 120000,
-            fechaHora: new Date('2026-06-16T11:00:00Z'),
-            usuario: uRodrigo.nombre,
-            notas: 'Factura F-1002 (Abbvie Juvederm & Botox)',
-          },
-        });
-      }
-    }
-  }
-
-  console.log('✅ Base de datos cargada con éxito con 176 productos y 22 proveedores reales');
+  console.log('✅ Base de datos reiniciada a STOCK CERO con 176 productos y 22 proveedores reales');
 }
 
 main()
