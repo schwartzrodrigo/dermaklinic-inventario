@@ -49,24 +49,37 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { sku, nombre, marca, categoria, grupo, unidad, stockMinimo, precioActual } = body;
 
-    if (!sku || !nombre || !categoria || !grupo || !unidad) {
+    if (!nombre || !categoria || !grupo || !unidad) {
       return NextResponse.json(
-        { success: false, error: 'Faltan campos obligatorios' },
+        { success: false, error: 'Faltan campos obligatorios (Nombre, Categoría, Esterilidad, Unidad)' },
         { status: 400 }
       );
     }
 
-    const existeSKU = await db.producto.findUnique({ where: { sku } });
-    if (existeSKU) {
-      return NextResponse.json(
-        { success: false, error: `El SKU "${sku}" ya está registrado` },
-        { status: 400 }
-      );
+    let finalSku = sku?.trim() ? sku.trim().toUpperCase() : '';
+
+    if (!finalSku) {
+      const count = await db.producto.count();
+      let candidate = `DK-INS-${String(count + 1).padStart(3, '0')}`;
+      let attempt = 1;
+      while (await db.producto.findUnique({ where: { sku: candidate } })) {
+        candidate = `DK-INS-${String(count + 1 + attempt).padStart(3, '0')}`;
+        attempt++;
+      }
+      finalSku = candidate;
+    } else {
+      const existeSKU = await db.producto.findUnique({ where: { sku: finalSku } });
+      if (existeSKU) {
+        return NextResponse.json(
+          { success: false, error: `El SKU "${finalSku}" ya está registrado` },
+          { status: 400 }
+        );
+      }
     }
 
     const producto = await db.producto.create({
       data: {
-        sku,
+        sku: finalSku,
         nombre,
         marca: marca || null,
         categoria,

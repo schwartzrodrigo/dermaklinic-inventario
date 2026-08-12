@@ -410,10 +410,10 @@ export default function InsumoSearchAutocomplete({
             <form onSubmit={handleCreateProduct} className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block font-semibold text-slate-300 mb-1">SKU / Código *</label>
+                  <label className="block font-semibold text-slate-300 mb-1">SKU / Código (Opcional)</label>
                   <input
                     type="text"
-                    required
+                    placeholder="Auto-generado si se omite"
                     value={createFormData.sku}
                     onChange={(e) => setCreateFormData({ ...createFormData, sku: e.target.value.toUpperCase() })}
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white font-mono focus:border-teal-500 focus:outline-none"

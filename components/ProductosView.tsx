@@ -401,11 +401,10 @@ export default function ProductosView({
             <form onSubmit={handleSubmitNuevo} className="space-y-4 text-xs">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block font-semibold text-slate-300 mb-1">SKU / Código Interno</label>
+                  <label className="block font-semibold text-slate-300 mb-1">SKU / Código (Opcional)</label>
                   <input
                     type="text"
-                    required
-                    placeholder="Ej. MED-005"
+                    placeholder="Auto-generado si se omite"
                     value={formData.sku}
                     onChange={(e) => setFormData({ ...formData, sku: e.target.value.toUpperCase() })}
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-white"
