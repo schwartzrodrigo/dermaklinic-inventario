@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   AlertCircle,
   ChevronRight,
+  RotateCcw,
 } from 'lucide-react';
 import {
   BarChart,
@@ -123,6 +124,29 @@ export default function DashboardOverview({
           </p>
         </div>
         <div className="flex items-center gap-3">
+          <button
+            onClick={async () => {
+              if (confirm('¿Estás seguro de que deseas reiniciar todo el inventario y stock a CERO para ingresar datos desde el principio?')) {
+                try {
+                  const res = await fetch('/api/seed', { method: 'POST' });
+                  const data = await res.json();
+                  if (data.success) {
+                    alert('Inventario reiniciado a CERO con éxito.');
+                    if (onRetry) onRetry();
+                  } else {
+                    alert('Error: ' + data.error);
+                  }
+                } catch (e) {
+                  alert('Error al conectar con la API de reinicio.');
+                }
+              }
+            }}
+            className="flex items-center space-x-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-medium text-xs px-3.5 py-2.5 rounded-xl transition-all border border-slate-700 shadow-sm"
+            title="Reiniciar stock, lotes y movimientos a CERO"
+          >
+            <RotateCcw className="w-3.5 h-3.5 text-teal-400" />
+            <span>Reiniciar a CERO</span>
+          </button>
           <button
             onClick={onOpenNuevoEgreso}
             className="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs px-4 py-2.5 rounded-xl transition-all shadow-md shadow-emerald-900/30"
